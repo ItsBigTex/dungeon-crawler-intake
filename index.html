@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dungeon Crawler — Crawler Intake Form</title>
+<style>
+:root{--bg:#030505;--panel:#09100e;--panel2:#0d1512;--line:#26382f;--text:#d9e0dc;--muted:#84928b;--acid:#d9ff38;--red:#ff4c4c;--amber:#ffc857;--cyan:#5de4dc}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 50% -10%,#15221b 0,#070a09 38%,#020303 100%);color:var(--text);font-family:Consolas,'Courier New',monospace;line-height:1.5}body:after{content:'';position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.04;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px);background-size:100% 5px}.page{max-width:920px;margin:24px auto;background:linear-gradient(180deg,rgba(11,17,15,.97),rgba(5,8,7,.97));padding:34px 44px;border:1px solid var(--line);box-shadow:0 15px 60px #000}.page:before{content:'[ CRAWLER PSYCHOMETRIC INTAKE // ACTIVE SESSION ]';display:block;color:var(--acid);font-size:11px;letter-spacing:1.5px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:25px}h1{text-align:left;font-size:34px;margin:0 0 4px;letter-spacing:2px;color:var(--acid);text-shadow:0 0 18px #d9ff3833}.subtitle{text-align:left;font-size:12px;letter-spacing:1px;color:var(--muted);margin-bottom:28px}h2{font-size:18px;color:var(--acid);border-bottom:1px solid #34493e;padding:10px 0 7px;margin-top:38px;text-transform:uppercase}h2:before{content:'// ';color:#607369}h3{font-size:15px;margin-bottom:5px;color:var(--cyan)}p{font-size:14px}.note{background:#101714;border-left:4px solid var(--amber);padding:12px 14px;margin:18px 0;color:#bdc8c2}.note:before{content:'SYSTEM NOTICE: ';color:var(--amber);font-weight:bold}label{font-weight:bold;font-size:13px;display:block;margin:13px 0 5px;color:#cbd4cf}input[type=text],input[type=number],textarea,select{width:100%;border:1px solid #34463d;border-radius:0;padding:10px;font:14px Consolas,'Courier New',monospace;background:#030605;color:var(--text)}input:focus,textarea:focus,select:focus{outline:1px solid var(--acid);border-color:var(--acid);box-shadow:0 0 12px #d9ff3815}textarea{min-height:76px;resize:vertical}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px 18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.small{font-size:12px;color:var(--muted)}.rating{display:grid;grid-template-columns:190px repeat(10,1fr);gap:3px;align-items:center;margin:8px 0;font-size:11px}.rating .rlabel{font-weight:bold}.rating span{text-align:center;border:1px solid #2b3a32;padding:5px 0;background:#07100c}.rating input{accent-color:var(--acid)}.checkgrid{display:grid;grid-template-columns:1fr 1fr;gap:4px 18px}.checkgrid label{font-weight:normal;margin:3px 0}.checkgrid input{accent-color:var(--acid)}.actions{max-width:920px;margin:0 auto 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.actions button{padding:12px;border:1px solid #596b45;border-radius:0;background:#121b15;color:var(--acid);font-weight:bold;cursor:pointer;font-family:inherit}.actions button:hover{background:#1a261c;box-shadow:0 0 15px #d9ff3818}.actions .secondary{background:#080c0a;color:#a9b5ae;border-color:#334239}
+#sysboot{position:fixed;inset:0;background:#020303;z-index:999;display:flex;align-items:center;justify-content:center;padding:22px;transition:.7s opacity,.7s visibility}#sysboot.done{opacity:0;visibility:hidden;pointer-events:none}.bootbox{width:min(760px,100%);background:#050807;border:1px solid #33443b;padding:28px;box-shadow:0 0 70px #000}.brand{font-size:clamp(28px,6vw,52px);color:var(--acid);font-weight:bold;letter-spacing:3px;line-height:1}.brand small{display:block;color:#76847c;font-size:11px;letter-spacing:2px;margin-top:9px}.bootlog{min-height:225px;margin:24px 0 15px;color:#9aa69f;font-size:13px}.bootline{margin:7px 0}.ok:before{content:'[ OK ] ';color:var(--acid)}.warn:before{content:'[WARN] ';color:var(--amber)}.bad:before{content:'[ !! ] ';color:var(--red)}#enterDungeon{width:100%;padding:15px;border:0;background:var(--acid);color:#10120d;font:bold 14px Consolas;letter-spacing:2px;cursor:pointer}#enterDungeon:disabled{background:#273020;color:#69705e;cursor:wait}.sysbar{max-width:920px;margin:18px auto 0;padding:9px 13px;border:1px solid var(--line);background:#050907;display:flex;justify-content:space-between;gap:12px;font-size:11px;color:#829088}.online{color:var(--acid)}.terminated{color:var(--red)}.hero{max-width:920px;margin:10px auto 0;padding:25px;border:1px solid var(--line);background:linear-gradient(135deg,#0e1712,#050807)}.hero .eyebrow{color:var(--acid);font-size:11px;letter-spacing:2px}.hero h1{font-size:clamp(30px,6vw,55px);margin:7px 0}.hero p{max-width:740px;color:#aab5af}.warning{border-left:4px solid var(--red);background:#160a0a;padding:12px 14px;margin-top:18px}.warning b{color:var(--red)}.statusgrid{max-width:920px;margin:10px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.statuscell{background:#07100c;padding:12px}.statuscell small{display:block;color:#697970}.statuscell strong{color:var(--acid)}
+@media(max-width:720px){.page{margin:10px;padding:22px 16px}.grid2,.grid3,.checkgrid{grid-template-columns:1fr}.rating{grid-template-columns:1fr repeat(5,1fr)}.rating span:nth-of-type(n+6){margin-top:3px}.actions{grid-template-columns:1fr 1fr;margin:10px}.sysbar{margin:10px;flex-direction:column}.hero,.statusgrid{margin-left:10px;margin-right:10px}.statusgrid{grid-template-columns:1fr}}
+@media print{#sysboot,.sysbar,.hero,.statusgrid{display:none!important}body{background:#fff;color:#000}.page{box-shadow:none;border:0;background:#fff;color:#000;margin:0;max-width:none}.page:before{color:#000}h1,h2,h3,label{color:#000!important}input,textarea,select{color:#000!important;background:#fff!important;border-color:#777!important}.actions{display:none}}
+</style>
+</head>
+<body><div id="sysboot"><div class="bootbox"><div class="brand">DUNGEON SYSTEM™<small>EARTH INSTANCE // CRAWLER INTAKE TERMINAL</small></div><div id="bootlog" class="bootlog"></div><button id="enterDungeon" disabled>INITIALIZING...</button></div></div>
+<div class="sysbar"><span>WORLD DUNGEON // INSTANCE: EARTH</span><span class="online">● SYSTEM ONLINE</span><span class="terminated">SURFACE STATUS: TERMINATED</span></div>
+<div class="hero"><div class="eyebrow">[ AUTOMATED CRAWLER REGISTRATION PROTOCOL ]</div><h1>WELCOME, CRAWLER.</h1><p>Your previous life has been deemed statistically insignificant. Please provide the Dungeon with enough information to reconstruct it accurately.</p><div class="warning"><b>⚠ SYSTEM WARNING:</b> Information supplied may be used for psychological manipulation, environmental reconstruction, monster generation, loot balancing, achievement criteria, audience engagement, and/or anything the Dungeon finds funny.</div></div>
+<div class="statusgrid"><div class="statuscell"><small>CRAWLER ID</small><strong>UNASSIGNED</strong></div><div class="statuscell"><small>STARTING LEVEL</small><strong>1</strong></div><div class="statuscell"><small>SURVIVAL PROBABILITY</small><strong id="survival">CALCULATING...</strong></div></div>
+<div class="page">
+<h1>DUNGEON CRAWLER</h1>
+<div class="subtitle">CRAWLER INTAKE FORM // PERSONAL EDITION</div>
+<div class="note">
+<p><b>You are not creating a character. You are volunteering yourself.</b></p>
+<p>For this campaign, you will play a version of yourself as you are right now. Your answers will help the GM determine your starting abilities, equipment, strengths, weaknesses, and character development. Some answers may be incorporated into the dungeon itself.</p>
+<p><b>OFF-LIMITS:</b> You never have to share trauma, sensitive personal information, or anything you don't want incorporated into the game. Anything you mark OFF LIMITS stays off limits.</p>
+</div>
+
+<h2>PART I — YOUR EVERYDAY LIFE</h2>
+<div class="grid">
+<div><label>Name</label><input name="name"></div>
+<div><label>Age</label><input name="age" type="number"></div>
+</div>
+<label>Height / General Build / Physical Description</label><input name="physical">
+<label>What do you do for work, school, or your day-to-day life?</label><textarea name="work"></textarea>
+<label>What does a normal weekday look like for you?</label><textarea name="weekday"></textarea>
+<label>What does a normal weekend look like?</label><textarea name="weekend"></textarea>
+<label>What are your biggest hobbies and interests?</label><textarea name="hobbies"></textarea>
+<label>What are you unusually knowledgeable about?</label><textarea name="knowledge"></textarea>
+<label>What are you completely clueless about?</label><textarea name="clueless"></textarea>
+
+<h2>PART II — WHAT YOU CAN ACTUALLY DO</h2>
+<p class="small">Rate yourself honestly from 1–10. These are not game stats; they help the GM translate the real you into the dungeon.</p>
+<div id="ratings"></div>
+<label>Explain any ratings that need context.</label><textarea name="rating_context"></textarea>
+<label>What practical, technical, creative, or unusual skills do you have?</label><textarea name="skills"></textarea>
+<label>What skills do you think would actually help you survive a dungeon?</label><textarea name="survival_skills"></textarea>
+<label>What skill would be hilariously useless in a dungeon?</label><textarea name="useless_skill"></textarea>
+
+<h2>PART III — YOUR STUFF</h2>
+<label>What would realistically be in your pockets when the apocalypse begins?</label><textarea name="pockets"></textarea>
+<label>What would be in your backpack, work bag, purse, or similar?</label><textarea name="bag"></textarea>
+<label>What useful equipment or items would be in your vehicle?</label><textarea name="vehicle"></textarea>
+<label>What useful equipment, tools, weapons, or supplies do you own at home?</label><textarea name="home"></textarea>
+<label>What one possession would you be genuinely devastated to lose?</label><textarea name="lost_item"></textarea>
+
+<h2>PART IV — YOUR PERSONALITY</h2>
+<label>Describe yourself in 3–5 words.</label><input name="three_words">
+<label>What are you most confident about?</label><textarea name="confident"></textarea>
+<label>What are you most insecure about?</label><textarea name="insecure"></textarea>
+<label>What are you stubborn about?</label><textarea name="stubborn"></textarea>
+<label>What do people tend to misunderstand about you?</label><textarea name="misunderstood"></textarea>
+<label>In a group, are you usually a leader, follower, planner, improviser, mediator, lone wolf, etc.? Explain.</label><textarea name="group_role"></textarea>
+
+<h2>PART V — THE PEOPLE YOU'D LEAVE BEHIND</h2>
+<label>Who are the people you care about most? Real names are optional.</label><textarea name="important_people"></textarea>
+<label>Who would you be most desperate to protect if the world ended tomorrow?</label><textarea name="protect"></textarea>
+<label>Who would you be most devastated to lose?</label><textarea name="devastated"></textarea>
+<label>Is there someone you would risk your life to save?</label><textarea name="save"></textarea>
+<label>Is there someone you absolutely would NOT risk your life to save?</label><textarea name="not_save"></textarea>
+
+<h2>PART VI — MEMORIES THE DUNGEON SHOULD KNOW</h2>
+<p>These answers may become locations, NPCs, props, dialogue, enemies, or small details. The dungeon may know things you never told the other players.</p>
+<label>1. Describe a childhood home or place you remember vividly. What did it smell or sound like?</label><textarea name="childhood_home"></textarea>
+<label>2. Where have you felt safest in your life, and why?</label><textarea name="safe_place"></textarea>
+<label>3. What's a memory that immediately makes you happy?</label><textarea name="happy_memory"></textarea>
+<label>4. What's a difficult memory that has stayed with you?</label><textarea name="hard_memory"></textarea>
+
+<h2>PART VII — MEMORY, FEAR & FAMILIARITY</h2>
+<label>5. Describe someone from your past who had a significant impact on you. How did they speak or behave?</label><textarea name="important_person"></textarea>
+<label>6. What smell instantly transports you somewhere?</label><textarea name="smell"></textarea>
+<label>7. What sound instantly reminds you of a particular time or place?</label><textarea name="sound"></textarea>
+<label>8. What's your ultimate comfort food, and where would you normally get it?</label><textarea name="food"></textarea>
+<label>9. What place from your life would you absolutely hate to find inside the dungeon?</label><textarea name="never_place"></textarea>
+<label>10. What place would you give almost anything to see again?</label><textarea name="return_place"></textarea>
+<label>What's one creature you absolutely hate or fear?</label><textarea name="creature_fear"></textarea>
+<label>What's one situation that genuinely terrifies you?</label><textarea name="situation_fear"></textarea>
+<label>What's one thing you absolutely cannot stand?</label><textarea name="cannot_stand"></textarea>
+<label>What kind of horror gets to you most?</label>
+<div class="checkgrid">
+<label><input type="checkbox" name="horror" value="Physical"> Physical horror</label>
+<label><input type="checkbox" name="horror" value="Psychological"> Psychological horror</label>
+<label><input type="checkbox" name="horror" value="Isolation"> Isolation</label>
+<label><input type="checkbox" name="horror" value="Losing control"> Losing control</label>
+<label><input type="checkbox" name="horror" value="Being hunted"> Being hunted</label>
+<label><input type="checkbox" name="horror" value="Claustrophobia"> Claustrophobia</label>
+<label><input type="checkbox" name="horror" value="Heights"> Heights</label>
+<label><input type="checkbox" name="horror" value="The unknown"> The unknown</label>
+<label><input type="checkbox" name="horror" value="Losing someone"> Losing someone</label>
+<label><input type="checkbox" name="horror" value="Other"> Other</label>
+</div>
+<label>What could the dungeon show you that would make you genuinely uncomfortable?</label><textarea name="uncomfortable"></textarea>
+
+<h2>PART VIII — IF YOU WERE GIVEN POWER</h2>
+<label>If you suddenly received a magical ability, what would you want it to be?</label><textarea name="magic"></textarea>
+<label>If you could have one weapon from fiction, what would you choose?</label><textarea name="fiction_weapon"></textarea>
+<label>If one real-world skill you have could become supernaturally powerful, what would it be?</label><textarea name="super_skill"></textarea>
+<label>If one person from your life could accompany you into the dungeon, who would you choose?</label><textarea name="companion"></textarea>
+<label>If you knew you were going to die tomorrow, what would you do tonight?</label><textarea name="last_night"></textarea>
+<label>What's something you would never do, even if it meant surviving?</label><textarea name="never_do"></textarea>
+<label>What's something you might do if it meant keeping yourself or someone you love alive?</label><textarea name="maybe_do"></textarea>
+
+<h2>PART IX — GM ONLY: YOUR SECRETS</h2>
+<p class="small">Give me 1–3 things the other players don't necessarily know. They can be serious, funny, embarrassing, mundane, or completely inconsequential. The dungeon may eventually know these things.</p>
+<label>Secret #1</label><textarea name="secret1"></textarea>
+<label>Secret #2</label><textarea name="secret2"></textarea>
+<label>Secret #3</label><textarea name="secret3"></textarea>
+
+<h2>PART X — OFF-LIMITS</h2>
+<p>If there is anything you do <b>not</b> want used in the campaign, put it here. If you mark something OFF LIMITS, it stays off limits.</p>
+<textarea name="off_limits" style="min-height:130px"></textarea>
+
+<h2>FINAL NOTE FROM THE GM</h2>
+<p><b>Don't build the person you wish you were.</b> Tell me who you actually are. If you're an accountant who has never touched a weapon, that's what you are. If you're a mechanic who can rebuild an engine but can't run a mile, that's what you are. If you spend all your free time gaming and know an unreasonable amount about obscure fantasy lore, that's useful information.</p>
+<p>The dungeon isn't going to give you the character you wish you were.</p>
+<p><b>It's going to give you the character you actually are.</b></p>
+<p>And then it's going to see what happens when that person is given a chance to become something else.</p>
+<label>Anything else the GM should know?</label><textarea name="anything_else"></textarea>
+</div>
+
+<div class="actions">
+<button onclick="saveForm()">Save Answers to This Browser</button>
+<button class="secondary" onclick="loadForm()">Load Saved Answers</button>
+<button class="secondary" onclick="window.print()">Print / Save as PDF</button>
+<button class="secondary" onclick="clearForm()">Clear Form</button>
+</div>
+
+<script>
+const bootLines=[['ok','Establishing connection to Dungeon Core...'],['ok','Locating planetary instance... EARTH'],['warn','Surface civilization status: NONVIABLE'],['ok','Scanning prospective crawlers...'],['ok','Memories detected. Fears detected. Poor decisions detected.'],['warn','Consent protocol located. Consent protocol ignored.'],['bad','PLEASE REMAIN CALM. PANIC IMPROVES VIEWER RETENTION.'],['ok','Crawler Intake Terminal ready.']];
+const blog=document.getElementById('bootlog'), enter=document.getElementById('enterDungeon');let bi=0;
+function bootNext(){if(bi<bootLines.length){const [k,m]=bootLines[bi++],d=document.createElement('div');d.className='bootline '+k;d.textContent=m;blog.appendChild(d);setTimeout(bootNext,240)}else{enter.disabled=false;enter.textContent='BEGIN CRAWLER INTAKE'}}
+setTimeout(bootNext,300);enter.addEventListener('click',()=>{document.getElementById('sysboot').classList.add('done');setTimeout(()=>{document.getElementById('survival').textContent='STATISTICALLY UNHELPFUL'},900)});
+
+const stats=[
+["strength","Strength"],["endurance","Endurance"],["agility","Agility / Coordination"],
+["reflexes","Reflexes"],["fitness","General Fitness"],["problem","Problem Solving"],
+["intelligence","General Intelligence"],["memory","Memory"],["attention","Attention to Detail"],
+["creativity","Creativity"],["pressure","Staying Calm Under Pressure"]
+];
+const r=document.getElementById("ratings");
+r.innerHTML=stats.map(([key,label])=>`<div class="rating"><div class="rlabel">${label}</div>${Array.from({length:10},(_,i)=>`<span>${i+1}<br><input type="radio" name="rate_${key}" value="${i+1}"></span>`).join("")}</div>`).join("");
+
+function fields(){return [...document.querySelectorAll("input,textarea,select")]}
+function saveForm(){
+ const data={};
+ fields().forEach(e=>{if(e.type==="checkbox")data[e.name+"_"+e.value]=e.checked;else if(e.type==="radio"){if(e.checked)data[e.name]=e.value}else data[e.name]=e.value});
+ localStorage.setItem("dungeonCrawlerIntake",JSON.stringify(data));
+ alert("Your answers have been saved in this browser.");
+}
+function loadForm(){
+ const data=JSON.parse(localStorage.getItem("dungeonCrawlerIntake")||"{}");
+ fields().forEach(e=>{if(e.type==="checkbox")e.checked=!!data[e.name+"_"+e.value];else if(e.type==="radio")e.checked=data[e.name]===e.value;else if(data[e.name]!==undefined)e.value=data[e.name]});
+ alert("Saved answers loaded.");
+}
+function clearForm(){
+ if(!confirm("Clear all answers? This cannot be undone unless you saved them first."))return;
+ fields().forEach(e=>{if(e.type==="checkbox"||e.type==="radio")e.checked=false;else e.value=""});
+ localStorage.removeItem("dungeonCrawlerIntake");
+}
+</script>
+</body>
+</html>
